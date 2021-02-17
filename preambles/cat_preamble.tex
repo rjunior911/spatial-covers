@@ -1,0 +1,132 @@
+% Some conventions to start using:
+% 1)capitalized things will typically not require arguments as they should be proper nouns.
+% E.g. \cat{C} ought to turn C into a catgeory while $\Cat$ will merely be the category of categories
+% 2) all-caps indicates the higher categorical version of something. E.g. above \CAT would give \infty-cats
+
+%An attempt at introducing a font system for all of the different kinds of objects
+
+\newcommand{\ot}{\leftarrow}
+\newcommand{\id}{1}
+
+%Objects
+
+%% \newcommand{\ob}[1]{\mathcal{#1}}
+\newcommand{\meta}[1]{\mathcal{#1}}
+\newcommand{\Ob}{\meta{Obj}}
+\newcommand{\obj}[1]{\meta{Obj}(#1)}
+%1-categories 
+\newcommand{\cat}[1]{\mathsf{#1}}
+\newcommand{\Hom}{\meta{Hom}}
+\renewcommand{\hom}[1]{\Hom_{#1}}
+\newcommand{\Fun}{\cat{Fun}}
+\newcommand{\Psh}{\cat{Psh}}
+\newcommand{\Grpd}{\cat{Grpd}}
+\newcommand{\Grp}{\cat{Grp}}
+\newcommand{\psh}[1]{\Psh_{#1}}
+\newcommand{\grpd}[1]{\Grpd \left\(#1 \right\)}
+\newcommand{\grp}[1]{\Grp \left\(#1 \right\)}
+\newcommand{\Yo}{\mathcal{Y}} %yoneda
+\newcommand{\yo}[1]{\Yo_{#1}} %yoneda embedding
+\renewcommand{\L}{\mathscr{L}} %localization functor
+%Higher categories (caps)
+\newcommand{\CAT}[1]{\mathcal{#1}}%TODO decide on higher category convention
+\newcommand{\Cat}{\cat{CAT}} %TODO this was changed to fit convention 1, but may cause errors
+%Internal Categories
+
+%Objects in Internal Categories
+
+\newcommand{\ZZ}{\mathbb{Z} }
+\renewcommand{\SS}{\mathbb{S} }
+\newcommand{\NN}{\mathbb{N} }
+\newcommand{\RR}{\mathbb{R} }
+\newcommand{\QQ}{\mathbb{Q} }
+
+
+\newcommand{\G}{\mathbb{G} }
+% \newcommand{\H}{\mathbb{H} } %conflicts with existing command. Not sure if worth it
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\GG}{\mathbb{G} }
+\newcommand{\B}[1]{\cat{B}\mathbb{#1}} %Classifying spaces
+\newcommand{\PP}{\mathbb{P} }
+\newcommand{\FF}{\mathbb{F} }
+%Basic Cats
+\newcommand{\CC}{\mathbb{C} }
+\newcommand{\DD}{\mathbb{D} }
+\newcommand{\internal}[1]{\mathbb{#1}}
+\renewcommand{\P}{\internal{P} } %TODO need new convention for internal objects
+\newcommand{\C}{\cat{C} }
+\newcommand{\D}{\cat{D} }
+\newcommand{\induced}[1]{\widehat{\left( #1 \right)}}
+\newcommand{\grpd}[1]{\underline{#1}}
+%\newcommand{\J}{\mathsf{J} }
+\newcommand{\terminal}{*}
+\newcommand{\cod}[1]{cod\left( #1 \right)}
+\newcommand{\comp}{\circ }
+\newcommand{\inj}{\hookrightarrow }
+\newcommand{\surj}{\twoheadrightarrow }
+\newcommand{\nat}{\Rightarrow }
+%% \newcommand{\cat}[1]{\mathrm{#1} }
+%% \newcommand{\CAT}{\cat{CAT} }
+%Topology Stuff
+\newcommand{\Top}{\cat{Top} }
+\newcommand{\Open}{\mathscr{O} }
+%Topos Stuff
+\newcommand{\topos}[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\topology}[1]{\ensuremath{\underline{#1}}}
+\newcommand{\tJ}{\topology{J}}
+\newcommand{\tK}{\topology{K}}
+\newcommand{\siteC}{\left( \C, \tJ \right)}
+\newcommand{\siteD}{\left( \D, \tK \right)}
+\newcommand{\Sh}{\cat{Sh}}
+\newcommand{\sheafification}[1]{\mathbf{a}\left( #1 \right)}
+\newcommand{\E}{\topos{E} }
+\newcommand{\F}{\topos{F} }
+%Higher Cats/ Internal Cats
+\newcommand{\iCAT}{\cat{CAT}_\infty }
+\newcommand{\iGpd}{\cat{Gpd}_\infty }
+\newcommand{\iGr}{\cat{Groth}_\infty }
+\newcommand{\Gr}{\cat{Groth} }
+\newcommand{\Loc}{\cat{Loc} }
+\newcommand{\Simp}{\cat{\Delta} }
+\newcommand{\Sets}{\cat{Set} }
+\newcommand{\Set}{\cat{Set} }
+\newcommand{\sSet}{\cat{sSet} }
+\newcommand{\sSets}{\cat{sSet} }
+\newcommand{\sS}{\cat{sS} }
+\newcommand{\s}[1]{\cat{s #1} }
+\newcommand{\Horn}{\Lambda }
+\newcommand{\del}{\partial}
+\newcommand{\isisom}{\cong}
+\newcommand{\iso}{\cong}
+\newcommand{\tensor}{\otimes}
+% \renewcommand{\equiv}{\simeq} %conflicts with mathabx
+
+\renewcommand{\Vec}[1]{\cat{Vec}_{#1}}
+\newcommand{\Grp}{\cat{Grp}}
+\newcommand{\Ab}{\cat{Ab}}
+\newcommand{\Man}{\cat{Man}}
+\newcommand{\Mod}[1]{\cat{Mod}_{#1}}
+
+\newcommand{\completion}[1]{\overline{#1}}
+\newcommand{\liminj}{\varinjlim}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\limproj}{\varprojlim}
+\renewcommand{\lim}{\varprojlim}
+
+
+\newcommand{\Gpd}{\cat{Gpd} }
+\newcommand{\Aut}{\mathsf{Aut} }
+\newcommand{\act}{\circlearrowright}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+  }}
+
+%DIAGRAM SHORTCUTS
+%to be used in tikzcd environment
+\newcommand{\internalGroupoid}[3]{
+  #1  \arrow[r,  shift right=2] \arrow[r] \arrow[r,  shift left] & #2 \arrow[l, shift left=1]  \arrow[l, shift right=1]   \arrow[r, shift left=1] \arrow[r, shift right=1] & #3 \arrow[l] \\
+}

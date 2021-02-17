@@ -1,0 +1,99 @@
+ %% \usepackage{natbib}
+%\usepackage[sorting=none,citestyle=authoryear]{biblatex}
+\usepackage{geometry} %set the font and margins
+\usepackage{bibentry} %allows for inline citations before the bibliography (say in a footnote or resume)
+\usepackage[final]{graphicx} % Allows including images
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm} 
+\usepackage{tabularx}
+\usepackage{tikz} 
+\usepackage{tikz-cd} %cd for Commutative Diagrams
+% \usepackage{xypic}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+%% \usetikzlibrary{babel}
+
+%had to redefine sections and subsections to put line breaks
+% \usepackage[parfill]{parskip}    
+
+% \makeatletter
+% \def\section{\@startsection{section}{3}%
+%   \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+%   {\normalfont\itshape}}
+% \def\subsection{\@startsection{subsection}{3}%
+%   \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+%   {\normalfont\itshape}}
+% \def\subsubsection{\@startsection{subsubsection}{3}%
+%   \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+%   {\normalfont\itshape}}
+% \makeatother
+
+% ========================================
+%TAKE 17 on lowercase math script fonts
+% ========================================
+% \let\mathbbalt\mathbb
+% \usepackage{fontspec}
+% \usepackage{unicode-math}
+\usepackage[utf8]{inputenc}
+% \usepackage{mathalfa} % more font options
+\usepackage[cal=esstix,
+% bb=ams,
+% frak=ams,
+scr=rsfs
+]{mathalpha}
+% \usepackage[cal=boondoxo]{mathalfa}
+\usepackage{mathabx}
+
+\usepackage{amsfonts} % more font options
+% \usepackage{mathrsfs} %doesn't work, maybe need to fix texlive?
+% \usepackage[mathscr]{eucal}
+% \usepackage{boondox-cal}
+% \usepackage{calligra}%breaks on Mac
+% \DeclareMathAlphabet{\mathcal}{T1}{calligra}{m}{n}
+% ========================================
+% \let\mathbb\mathbbalt% UNIVERSAL RESET TO ORIGINAL \mathbb
+
+\usepackage{pdfsync}
+
+% \usepackage{ntheorem}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\newcolumntype{L}{>{\centering\arraybackslash}p{2cm}}
+\newcolumntype{M}{>{\centering\arraybackslash}p{0.45t\textwidth}}
+\newcolumntype{E}{>{\centering\arraybackslash}p{0.1\textwidth}}
+\newcommand{\de}[1]{\textbf{#1}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{conj}{Conjecture}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{prop}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{principle}{Principle}
+\newtheorem*{project}{Project}
+\newtheorem*{moral}{Moral}
+\newtheorem*{question}{Question}
+\newtheorem*{intuition}{Intuition}
+\newtheorem*{fact}{Fact}
+\newtheorem*{xample}{Example}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+%Below lies the necessary commands to copy nlab diagrams into my tex code
+\newcommand{\itexarray}[1]{\begin{matrix}#1\end{matrix}}
+
+% math-mode versions of \rlap, etc
+% from Alexander Perlis, "A complement to \smash, \llap, and lap"
+%   http://math.arizona.edu/~aprl/publications/mathclap/
+\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+\def\mathllap{\mathpalette\mathllapinternal}
+\def\mathrlap{\mathpalette\mathrlapinternal}
+\def\mathclap{\mathpalette\mathclapinternal}
+\def\mathllapinternal#1#2{\llap{$\mathsurround=0pt#1{#2}$}}
+\def\mathrlapinternal#1#2{\rlap{$\mathsurround=0pt#1{#2}$}}
+\def\mathclapinternal#1#2{\clap{$\mathsurround=0pt#1{#2}$}}
+
+\newcommand{\darr}{\downarrow}
+

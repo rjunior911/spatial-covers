@@ -1,0 +1,43 @@
+\documentclass[12pt]{amsart}
+\usepackage{subfiles}
+\usepackage{enumitem}
+%% \usepackage[backend=biber,style=verbose,sorting=none,maxnames=99]{biblatex}
+\usepackage[backend=biber,style=alphabetic,citestyle=alphabetic,sorting=none,maxnames=99]{biblatex}
+\makeatletter
+%\def\input@path{{../}}
+\makeatother
+\input{preambles/cat_preamble}
+\input{preambles/mathnotes}
+%% For collaborative notes:
+\usepackage{todonotes}
+\setlength{\marginparwidth}{2.5cm}
+
+\newcommand{\joseph}[2][]{
+  \ifmmode
+   \textrm{\todo[author=Joseph,backgroundcolor=green,#1]{#2}}
+  \else
+  \todo[author=Joseph,backgroundcolor=green,#1]{#2}
+  \fi
+}
+
+\newcommand{\charles}[2][]{
+  \ifmmode
+   \textrm{\todo[author=Charles,backgroundcolor=orange,#1]{#2}}
+  \else
+  \todo[author=Charles,backgroundcolor=orange,#1]{#2}
+  \fi
+}
+% \addbibresource{../bibs/me.bib}
+\addbibresource{./bibs/topos_refs.bib}
+%% \bibstyle{abbrvnat}
+% \bibliographystyle{abbrvnat}
+
+  \begin{document}
+  \subfile{./bounds.tex}
+  \subfile{./representation-theorem.tex}
+  \subfile{./spatial-cover.tex}
+  \subfile{./toposes-as-splitting-categories.tex}
+   \nocite{*}
+  \printbibliography
+%% \bibliography{bibs/topos_refs.bib}
+\end{document}

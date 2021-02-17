@@ -1,0 +1,54 @@
+\newcommand{\cat}{\mathsf}
+% The user can redefine \cat to be something else (e.g. mathbf). However, I'd also
+% like them to be able to redefine things like Set, Grp, and so forth without having
+% to use AtBeginDocument.
+% TODO: do I even need this AtBeginDocument here...?
+\newcommand{\newcat}[2]{\newcommand{#1}{\cat{#2}}}
+\AtBeginDocument{
+	\newcat{\fC}{C}
+	\newcat{\fD}{D}
+	\newcat{\Set}{Set} % sets
+	\newcat{\Grp}{Grp} % groups
+	\newcat{\Gpd}{Gpd} % groupoids
+	\newcat{\Ab}{Ab} % abelian groups
+	\newcat{\Ring}{Ring} % rings
+	\newcat{\Mod}{Mod} % modules (over a ring)
+	\newcat{\Alg}{Alg} % algebras (over a ring)
+	\newcat{\Vect}{Vect} % vector spaces (over a field)
+	\def\Top{\cat{Top}} % topological space (sometimes already defined, e.g. by kpfonts)
+	% TODO what other categories of topological/geometric objects do I need?
+	\newcat{\LocRing}{LocRing} % locally ringed spaces
+	\newcat{\AffSch}{AffSch} % affine schemes
+	\newcat{\Sch}{Sch} % schemes
+	\newcat{\sSet}{sSet} % simplicial sets
+	\newcat{\Man}{Man} % manifolds
+	\newcat{\Fun}{Fun} % functor categories
+	\newcat{\CC}{C} 
+}
+\newcommand{\term}{\emph} % e.g. "The \term{trace} is defined to be..."
+\newcommand{\latin}{\textit} % e.g. \latin{per se}, \latin{mutatis mutandis}
+%Added by joseph
+\newcat{\Geom}{Geom}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\EE}{\mathcal{E}}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\BG}{B\mathbb{G}}
+% \newcommand{\pt}{*}
+\newcommand{\catequiv}{\approx}
+\newcommand{\ceq}{\approx}
+\DeclareMathOperator*{\Sup}{\bigvee} % homotopy colimit
+\DeclareMathOperator*{\Inf}{\bigwedge} % homotopy colimit
+\newcommand{\ssup}{\vee}
+\newcommand{\iinf}{\wedge}
+\newcommand{\ncontained}{\nsubseteq}
+\newcommand{\ncontains}{\nsupseteq}
+\AtBeginDocument{ % redefined by mathdesign
+ \renewcommand{\O}{\mathcal O} % Opens modified by joseph
+}
+\newcommand{\Sh}[1]{\mathsf{Sh}\left( #1 \right)}
+% Used to define categories of sheaves over something
+\newcommand{\pSh}[1]{\mathsf{pSh}\left( #1 \right)}
+% Used to define categories of pre-sheaves over something
+\newcommand{\gSh}[2]{\mathsf{Sh}_{#1}\left( #2 \right)}
+% Used to define categories of G-sheaves over something
